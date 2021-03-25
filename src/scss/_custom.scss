@@ -1,0 +1,43 @@
+// Here you can add other styles
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
+  background-image: url("../assets/img/bg_01.png");
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.btn-black {
+  color: #fff;
+  background-color: #1b1b1b;
+  border-color: #ffffff;
+}
+
+.btn-black:hover {
+  color: #fff;
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+.btn-check:focus+.btn-black,
+.btn-black:focus {
+  color: #fff;
+  background-color: #5c636a;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
+.text-white {
+  color: #fff;
+}
