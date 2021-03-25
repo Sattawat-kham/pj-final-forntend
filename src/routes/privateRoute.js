@@ -23,7 +23,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
     return (
         window.sessionStorage.getItem('isLogin') === "1" ? (<Route {...rest} />) : (<Redirect to={{
-            pathname: process.env.PUBLIC_URL + '/login'
+            pathname: process.env.PUBLIC_URL + '/register'
         }} />)
     )
 }

@@ -118,7 +118,7 @@ function Login() {
                 &nbsp;&nbsp;&nbsp;
                 <Link to="/register">
                   <Button htmlType="button" >
-                    สมัครสมาชิก
+                    ลงทะเบียน
                   </Button>
                 </Link>
               </Form.Item>

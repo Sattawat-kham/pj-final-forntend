@@ -5,7 +5,7 @@ import config from '../config/index';
 export const LoginService = async (data) => {
     return await Axios({
         method: "post",
-        url: `${config.API_URL}/users/login`,
+        url: `http://139.59.232.220:9000/users/login`,
         config: { headers: { "Content-Type": "multipart/form-data" } },
         data: data
     })
