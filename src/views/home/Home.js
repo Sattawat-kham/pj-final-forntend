@@ -1,12 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import { Table } from "antd";
 import logo_img from "../../assets/img/logo.png";
+import {Getregister} from "../../api";
+import { closeShowLoading, errorCallBack, showLoadingCallBack } from '../../shared/sweetalerts';
 
 function Home() {
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(false);
     const history = useHistory();
+    
+    useEffect(async () => {
+        try {
+            showLoadingCallBack()
+            const res = await Getregister()
+            console.log(`res.data`, res.data)
+            setList(res.data)
+            closeShowLoading()
+        } catch (error) {
+            closeShowLoading()
+            // console.log('error :>> ', error.response.data.error);
+            // const log = error.response.data.error ? error.response.data.error.message : undefined;
+            errorCallBack("ข้อความจากระบบ", "มีบางอย่างผิดพลาด");
+        }
+    }, [])
 
     const columns = [
 
@@ -30,14 +47,15 @@ function Home() {
             key: "label",
             width: 60,
             sorter: (a, b) => a.order - b.order,
+            render: (a, b) => a == 1 ? "มีโอกาศเข้าศึกษาสูง" : "มีโอกาศเข้าศึกษาสูงต่ำ",
         },
-        {
-            title: () => "ข้อมูลผู้สมัคร",
-            dataIndex: "label",
-            key: "label",
-            width: 40,
-            sorter: (a, b) => a.order - b.order,
-        },
+        // {
+        //     title: () => "ข้อมูลผู้สมัคร",
+        //     dataIndex: "aa",
+        //     key: "aa",
+        //     width: 40,
+        //     sorter: (a, b) => a.order - b.order,
+        // },
 
 
     ];

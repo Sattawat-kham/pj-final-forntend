@@ -51,3 +51,14 @@ export const AddQuizs = async (data) => {
         data: data
     })
 };
+
+/* ข้อมูลผู้สมัคร */
+export const Getregister = async (data) => {
+    return await Axios({
+        method: "get",
+        url: `${config.API_URL}/public/api/show_register`,
+        headers: { Authorization: "Bearer " + JSON.parse(sessionStorage.getItem("token")).access_token },
+        config: { headers: { "Content-Type": "multipart/form-data" } },
+        data: data
+    })
+};
