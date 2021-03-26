@@ -247,20 +247,14 @@ const Register = () => {
     val.faculty = "วิทยาศาสตร์";
 
     val.birth_date = `${moment(new Date(val.birthday._d)).format('YYYY-MM-DD')}`
-   
-
-    console.log("Success:", val);
 
     /* บันทึก */
-
     showLoadingCallBack();
     const res = await RegisterService(val);
-    console.log('res.data :>> ', res.data);
     closeShowLoading();
   };
 
   const onFinishFailed = (errorInfo) => {
-    // console.log("Failed:", errorInfo);
     errorCallBack("กรอกข้อมูลไม่ครบ");
   };
 
