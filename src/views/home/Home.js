@@ -14,7 +14,6 @@ function Home() {
         try {
             showLoadingCallBack()
             const res = await Getregister()
-            console.log(`res.data`, res.data)
             setList(res.data)
             closeShowLoading()
         } catch (error) {
