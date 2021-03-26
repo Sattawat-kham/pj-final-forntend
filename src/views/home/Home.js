@@ -47,7 +47,7 @@ function Home() {
             key: "label",
             width: 60,
             sorter: (a, b) => a.order - b.order,
-            render: (a, b) => a == 1 ? "มีโอกาศเข้าศึกษาสูง" : "มีโอกาศเข้าศึกษาสูงต่ำ",
+            render: (a, b) => a == 1 ? "มีโอกาศเข้าศึกษาสูง" : "มีโอกาศเข้าศึกษาต่ำ",
         },
         // {
         //     title: () => "ข้อมูลผู้สมัคร",
@@ -76,7 +76,7 @@ function Home() {
                 <div className="container-login100">
                     <div className="wrap-login100">
                         <h2 className="text-center">
-                            รายชื่อ
+                            รายชื่อผู้สมัคร
                         </h2>
                         <br />
 
@@ -98,7 +98,7 @@ function Home() {
                 </div>
             </div>
 
-            <style dangerouslySetInnerHTML={{ __html: "\n.wrap-login100 {\n    width: 1260px;\n    background: #fff;\n    border-radius: 10px;\n    position: relative;\n    padding: 50px;\n    border-style: solid;\n}\n" }} />
+            <style dangerouslySetInnerHTML={{ __html: "\n.wrap-login100 {\n    width: 1280px;\n    background: #fff;\n    border-radius: 10px;\n    position: relative;\n    padding: 90px;\n    border-style: solid;\n}\n" }} />
 
 
         </>

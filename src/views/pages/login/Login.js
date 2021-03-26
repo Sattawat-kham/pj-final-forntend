@@ -26,7 +26,7 @@ const tailLayout = {
 function Login() {
 
   const [username, setUsername] = useState(
-    config.CONFIG_ENV === "development" ? "pondptm" : ""
+    config.CONFIG_ENV === "development" ? "Sattawat" : ""
   );
   const [password, setPassword] = useState(
     config.CONFIG_ENV === "development" ? "1234" : ""
@@ -116,11 +116,11 @@ function Login() {
                   เข้าสู่ระบบ
                 </Button>
                 &nbsp;&nbsp;&nbsp;
-                <Link to="/register">
+                {/* <Link to="/register">
                   <Button htmlType="button" >
                     ลงทะเบียน
                   </Button>
-                </Link>
+                </Link> */}
               </Form.Item>
 
             </Form>

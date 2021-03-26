@@ -394,7 +394,7 @@ const Register = () => {
               </Form.Item>
 
               <Form.Item
-                label="สาขา"
+                label="สาขาที่ต้องการเข้าศึกษาต่อ"
                 name="major"
                 rules={[
                   {
@@ -463,7 +463,7 @@ const Register = () => {
               </Form.Item>
 
               <Form.Item
-                label="ชื่อ-นามสกุลบิดา"
+                label="ชื่อ-นามสกุล บิดา"
                 name="father_name"
                 rules={[
                   {
@@ -500,12 +500,12 @@ const Register = () => {
               </Form.Item>
 
               <Form.Item
-                label="ชื่อ-นามสกุลมารดา"
+                label="ชื่อ-นามสกุล มารดา"
                 name="morther_name"
                 rules={[
                   {
                     required: true,
-                    message: "กรุณากรอก-นามสกุลชื่อมารดา",
+                    message: "กรุณากรอกชื่อ-นามสกุลชื่อมารดา",
                   },
                 ]}
               >
@@ -571,6 +571,9 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: "\n.wrap-login100 {\n    width: 870px;\n    background: #fff;\n    border-radius: 10px;\n    position: relative;\n    padding: 90px;\n    border-style: solid;\n}\n" }} />
+
     </>
   );
 };
