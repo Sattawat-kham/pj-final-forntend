@@ -2,19 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import { Table } from "antd";
 import logo_img from "../../assets/img/logo.png";
-import {Getregister} from "../../api";
+import { Getregister } from "../../api";
 import { closeShowLoading, errorCallBack, showLoadingCallBack } from '../../shared/sweetalerts';
 
 function Home() {
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(false);
     const history = useHistory();
-    
+
     useEffect(async () => {
         try {
             showLoadingCallBack()
             const res = await Getregister()
-            setList(res.data)
+            res.data.forEach((e, index) => {
+                e.fullname = e.name + " " + e.subname;
+             });
+
+            console.log(`res.data`, res.data)
+            setList(res.data)           
             closeShowLoading()
         } catch (error) {
             closeShowLoading()
@@ -28,10 +33,18 @@ function Home() {
 
         {
             title: () => "ชื่อ",
-            dataIndex: "name",
-            key: "name",
+            dataIndex: "fullname",
+            key: "fullname",
             width: 80,
-            sorter: (a, b) => a.name.localeCompare(b.name),
+            sorter: (a, b) => a.fullname.localeCompare(b.fullname),
+        },
+        {
+            title: () => "เพศ",
+            dataIndex: "sex",
+            key: "sex",
+            width: 60,
+            sorter: (a, b) => a.order - b.order,
+            render: (a, b) => a == 1 ? "ชาย" : "หญิง",
         },
         {
             title: () => "สาขาที่ต้องการศึกษาต่อ",
