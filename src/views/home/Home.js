@@ -102,7 +102,6 @@ function Home() {
         if (major == "ทั้งหมด") {
             new_list = listAll;
         } else {
-
             listAll.forEach((e, index) => {
                 if (e.major == major) {
                     new_list.push(e);
@@ -118,7 +117,6 @@ function Home() {
         if (label == "ทั้งหมด") {
             new_list = listAll;
         } else {
-
             listAll.forEach((e, index) => {
                 if (e.label == label) {
                     new_list.push(e);
@@ -141,7 +139,7 @@ function Home() {
                         <Select name="major_fillter" id="major_fillter" defaultValue="ทั้งหมด" style={{ width: "35%" }} onChange={fillter_major}
                             filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}>
                             <Option value="ทั้งหมด">ทั้งหมด</Option>
-                            <Option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</Option>                       
+                            <Option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</Option>
                             <Option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</Option>
                             <Option value="เทคโนโลยีมัลติมีเดีย">เทคโนโลยีมัลติมีเดีย</Option>
                             <Option value="วิทยาศาสตร์การกีฬา">วิทยาศาสตร์การกีฬา</Option>
