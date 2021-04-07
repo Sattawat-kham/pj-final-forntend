@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo_img from "../../../assets/img/logo.png";
-import { Form, Input, Button, Radio, DatePicker, Select } from "antd";
+import { Form, Input, Button, Radio, DatePicker, Select, Modal } from "antd";
 import { RegisterService, LoginService } from "../../../api/index";
 import moment from 'moment';
 import {
@@ -24,6 +24,26 @@ const tailLayout = {
 };
 
 const Register = () => {
+
+  const [showModalAddSpare, setshowModalAddSpare] = useState(false);
+
+  const showModal = () => {
+    setshowModalAddSpare(true);
+  };
+
+  const handleOk = () => {
+    setshowModalAddSpare(false);
+    window.location.reload();
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
+  const handleCancel = () => {
+    setshowModalAddSpare(false);
+    window.location.reload();
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
 
   const history = useHistory();
 
@@ -252,6 +272,9 @@ const Register = () => {
     showLoadingCallBack();
     const res = await RegisterService(val);
     closeShowLoading();
+
+    showModal();
+
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -561,6 +584,23 @@ const Register = () => {
                   <Button htmlType="button">ยกเลิก</Button>
                 </Link> */}
               </Form.Item>
+
+              <Modal
+                title="การบันทึก"
+                visible={showModalAddSpare}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                okText="เพิ่ม"
+                cancelText="ยกเลิก"
+                width={600}
+                footer={[
+                  <Button key="add" type="primary" onClick={handleOk}>
+                    ตกลง
+                </Button>
+                ]}
+              >
+                บันทึกข้อมูลสำเร็จ
+              </Modal>
             </Form>
           </div>
         </div>
